@@ -35,8 +35,8 @@ namespace Tools
         public override bool Equals(object obj)
         {
             if (obj == null) return false;
-            if (!(obj is CaseInsensitiveString)) return false;
-            var cis = (CaseInsensitiveString)obj;
+            var cis = obj as CaseInsensitiveString;
+            if (cis == null) return false;
             return EqualsInternal(this, cis);
         }
         public override int GetHashCode()
